@@ -1,4 +1,4 @@
-const fetchUserData = async () => {
+async function fetchUserData() {
   const apiUrl = "https://jsonplaceholder.typicode.com/users";
   const dataContainer = document.getElementById("api-data");
 
@@ -10,7 +10,7 @@ const fetchUserData = async () => {
 
     users.forEach(user => {
       const li = document.createElement("li");
-      li.innerText = `${user.name} - ${user.email} - ${user.address.city}`;
+      li.innerText = user.name;
       userList.appendChild(li);
     });
 
@@ -20,6 +20,6 @@ const fetchUserData = async () => {
   } catch (error) {
     dataContainer.innerHTML = "Failed to load user data.";
   }
-};
+}
 
-document.addEventListener("DOMContentLoaded", fetchUserData);
+document.addEventListener("DOMContentLoaded", fetchUserData);;
